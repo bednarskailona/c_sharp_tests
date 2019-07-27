@@ -19,11 +19,23 @@ namespace testy
             Console.WriteLine();
 
             Console.Write("Podaj średnią ucznia: ");
-            double srednia = double.Parse(Console.ReadLine());
+            double srednia;
+            bool result = double.TryParse(Console.ReadLine(), out srednia);
 
             if (srednia >= 4.75)
             {
-                Console.Write("Uczeń "+ imie + " " + nazwisko + " " + "otrzymuje świadectwo z wyróżnieniem");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.Write(imie + " " + nazwisko + " " + "świadectwo z wyróżnieniem");
+            }
+
+            else if (result == false)
+            {
+                Console.WriteLine("Podałeś niewłaściwą formę średniej");
+            }
+
+            else
+            {
+                Console.WriteLine(imie + " " + nazwisko + " - świadectwo bez wyróżnienia");
             }
 
            
