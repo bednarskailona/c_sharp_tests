@@ -14,7 +14,7 @@ namespace testy
 
             int i;
             
-            for (i=1; i<=3; i++)
+            for (; ; )
             {
                 Console.WriteLine();
                 Console.Write("Podaj imię ucznia: ");
