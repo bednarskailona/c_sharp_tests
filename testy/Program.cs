@@ -14,7 +14,7 @@ namespace testy
 
             int i;
             
-            for (i=0; i<=10; i++)
+            for (i=1; i<=3; i++)
             {
                 Console.WriteLine();
                 Console.Write("Podaj imię ucznia: ");
@@ -29,8 +29,17 @@ namespace testy
                 double srednia;
                 bool result = double.TryParse(Console.ReadLine(), out srednia);
 
+                if (srednia > 6)
+                {
+                    Console.WriteLine("Średnia nie może być większa od 6. Podaj właściwą średnią");
+                }
 
-                if (srednia >= 4.75)
+                else if (srednia < 1)
+                {
+                    Console.WriteLine("średnia nie może być mniejsza od 1. Podaj właściwą średnią");
+                }
+
+                else if (srednia >= 4.75)
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.Write(imie + " " + nazwisko + " " + "świadectwo z wyróżnieniem");
