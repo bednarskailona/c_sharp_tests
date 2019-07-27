@@ -60,10 +60,11 @@ namespace testy
                     
                 }
 
+                Console.ReadKey();
+                Console.Clear(); //czyści okno konsoli
             }
 
-
-            Console.ReadLine();
+                       
         }
     }
 }
